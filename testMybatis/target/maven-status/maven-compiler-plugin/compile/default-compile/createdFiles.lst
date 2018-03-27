@@ -1,0 +1,13 @@
+com\model\StudentLogin.class
+com\model\Student.class
+com\model\Person.class
+com\service\StudentServiceImpl.class
+com\service\PersonServiceImpl.class
+com\controller\PersonController.class
+com\controller\StudentController.class
+com\mappers\StudentMapper.class
+com\service\PersonService.class
+com\mappers\GenericMapper.class
+com\service\StudentService.class
+com\mappers\Mappable.class
+com\mappers\PersonMapper.class

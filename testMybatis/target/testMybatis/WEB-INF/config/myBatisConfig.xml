@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+  <settings>
+
+  </settings>
+  <typeAliases>
+
+    <typeAlias alias="Person" type ="com.model.Person" />
+
+  </typeAliases>
+  <mappers>
+
+    <mapper resource="mapperXML/Person.xml"/>
+
+  </mappers>
+
+</configuration>
