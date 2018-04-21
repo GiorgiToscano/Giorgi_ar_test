@@ -22,7 +22,8 @@ public class AnagrafeServiceImpl implements AnagrafeService{
 	public void insertDisciplina(AnagrafeDisciplina dis) {
 		anagrafeMapper.insert(dis);
 	}
-
+	
+	@Transactional
 	public void aggiungiCorso(Corso c) {
 		corsoMapper.insert(c);
 	}

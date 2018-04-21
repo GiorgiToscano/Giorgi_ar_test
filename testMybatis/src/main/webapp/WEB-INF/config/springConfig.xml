@@ -24,9 +24,9 @@
 
 <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 	<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
-	<property name="url" value="jdbc:sqlserver://10.100.1.1:1433;DatabaseName=Giorgi_ar_test" />
+	<property name="url" value="jdbc:sqlserver://IIS-GIORGI\SQLEXPRESS:1433;DatabaseName=Giorgi_area_riservata" />
 	<property name="username" value="sa_test" />
-	<property name="password" value="abc@321" />
+	<property name="password" value="abc@123" />
 </bean>
 
 <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -40,6 +40,9 @@
 
 <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 	<property name="basePackage" value="com.mappers" />
+</bean>
+
+<bean id="userValidator" class="com.model.validator.UtenteValidator">
 </bean>
 
 <tx:annotation-driven transaction-manager="transactionManager" />
