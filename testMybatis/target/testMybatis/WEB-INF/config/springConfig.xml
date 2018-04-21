@@ -26,16 +26,12 @@
 	<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
 	<property name="url" value="jdbc:sqlserver://10.100.1.1:1433;DatabaseName=Giorgi_ar_test" />
 	<property name="username" value="sa_test" />
-	<property name="password" value="Abc@321" />
+	<property name="password" value="abc@321" />
 </bean>
 
 <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 	<property name="dataSource" ref="dataSource" />
 	<property name="mapperLocations" value="classpath*:mapperXML/*.xml" />
-	<property name="configLocation" value="/WEB-INF/config/myBatisConfig.xml" />
-</bean>
-
-<bean id="personMapper" class="com.mappers.PersonMapper">
 </bean>
 
 <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
@@ -50,5 +46,8 @@
 <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 	<property name="dataSource" ref="dataSource" />
 </bean>
+
+<mvc:resources mapping="/resources/**" location="/resources/theme1/"  
+	cache-period="31556926"/>
 
 </beans>
