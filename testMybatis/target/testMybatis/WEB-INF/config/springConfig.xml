@@ -1,56 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:mvc="http://www.springframework.org/schema/mvc"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
-<mvc:annotation-driven />
+	<mvc:annotation-driven />
 
-<context:component-scan base-package="com" />
+	<context:component-scan base-package="com" />
+	<context:component-scan base-package="com.model.validator" />
 
-<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-	<property name="prefix" value="/WEB-INF/jsp/" />
-	<property name="suffix" value=".jsp" />
-</bean>
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
 
-<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-	<property name="basename" value="jdbc" />
-</bean>
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="jdbc" />
+	</bean>
 
-<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-	<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
-	<property name="url" value="jdbc:sqlserver://IIS-GIORGI\SQLEXPRESS:1433;DatabaseName=Giorgi_area_riservata" />
-	<property name="username" value="sa_test" />
-	<property name="password" value="abc@123" />
-</bean>
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+		<property name="url"
+			value="jdbc:sqlserver://IIS-GIORGI\SQLEXPRESS:1433;DatabaseName=Giorgi_area_riservata" />
+		<property name="username" value="sa_test" />
+		<property name="password" value="abc@123" />
+	</bean>
 
-<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-	<property name="dataSource" ref="dataSource" />
-	<property name="mapperLocations" value="classpath*:mapperXML/*.xml" />
-</bean>
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mapperLocations" value="classpath*:mapperXML/*.xml" />
+	</bean>
 
-<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
-	<constructor-arg index="0" ref="sqlSessionFactory" />
-</bean>
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg index="0" ref="sqlSessionFactory" />
+	</bean>
 
-<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-	<property name="basePackage" value="com.mappers" />
-</bean>
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.mappers" />
+	</bean>
+	<!-- <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl"> 
+		<property name="host"> <value>smtp.gmail.com</value> </property> <property 
+		name="port"> <value>587</value> </property> <property name="protocol"> <value>smtp</value> 
+		</property> <property name="username"> <value>areariservata@iisgiorgimilano.gov.it</value> 
+		</property> <property name="password"> <value>giorgiareariservata_2016</value> 
+		</property> <property name="javaMailProperties"> <props> <prop key="mail.smtp.auth">true</prop> 
+		<prop key="mail.smtp.starttls.enable">false</prop> <prop key="mail.smtp.quitwait">false</prop> 
+		<prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop> 
+		<prop key="mail.smtp.socketFactory.fallback">false</prop> <prop key="mail.debug">true</prop> 
+		</props> </property> </bean> -->
 
-<bean id="userValidator" class="com.model.validator.UtenteValidator">
-</bean>
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
 
-<tx:annotation-driven transaction-manager="transactionManager" />
-<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-	<property name="dataSource" ref="dataSource" />
-</bean>
-
-<mvc:resources mapping="/resources/**" location="/resources/theme1/"  
-	cache-period="31556926"/>
+	<mvc:resources mapping="/resources/**" location="/resources/theme1/"
+		cache-period="31556926" />
 
 </beans>

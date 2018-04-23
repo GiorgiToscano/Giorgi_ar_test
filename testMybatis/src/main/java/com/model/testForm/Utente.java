@@ -1,9 +1,13 @@
 package com.model.testForm;
 
+import java.util.Date;
+
 public class Utente {
 
-	private String tipologia,nome,cognome,username,password,email,codiceFiscale;
-	
+	private String tipologia,nome,cognome,username,password,email,codiceFiscale,codAtt;
+	private int id,areaUtente;
+	private boolean primoIngresso;
+	private Date signupDate;
 	
 	public Utente() {
 		
@@ -77,6 +81,56 @@ public class Utente {
 
 	public void setCodiceFiscale(String codiceFiscale) {
 		this.codiceFiscale = codiceFiscale;
+	}
+
+
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+	public boolean isPrimoIngresso() {
+		return primoIngresso;
+	}
+
+
+	public void setPrimoIngresso(boolean primoIngresso) {
+		this.primoIngresso = primoIngresso;
+	}
+
+
+	public String getCodAtt() {
+		return codAtt;
+	}
+
+
+	public void setCodAtt(String codAtt) {
+		this.codAtt = codAtt;
+	}
+
+
+	public Date getSignupDate() {
+		return signupDate;
+	}
+
+
+	public void setSignupDate(Date signupDate) {
+		this.signupDate = signupDate;
+	}
+
+
+	public int getAreaUtente() {
+		return areaUtente;
+	}
+
+
+	public void setAreaUtente(int areaUtente) {
+		this.areaUtente = areaUtente;
 	}
 
 	

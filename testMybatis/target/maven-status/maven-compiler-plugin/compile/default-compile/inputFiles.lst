@@ -5,11 +5,14 @@ C:\Users\IIS GIORGI\git\Giorgi_ar_test\testMybatis\src\main\java\com\mappers\Map
 C:\Users\IIS GIORGI\git\Giorgi_ar_test\testMybatis\src\main\java\com\controller\UtenteController.java
 C:\Users\IIS GIORGI\git\Giorgi_ar_test\testMybatis\src\main\java\com\model\testForm\UtenteForm.java
 C:\Users\IIS GIORGI\git\Giorgi_ar_test\testMybatis\src\main\java\com\model\validator\UtenteValidator.java
+C:\Users\IIS GIORGI\git\Giorgi_ar_test\testMybatis\src\main\java\com\model\mail\EmailManager.java
 C:\Users\IIS GIORGI\git\Giorgi_ar_test\testMybatis\src\main\java\com\controller\PersonController.java
+C:\Users\IIS GIORGI\git\Giorgi_ar_test\testMybatis\src\main\java\com\model\mail\ConfirmRegistrationEmail.java
 C:\Users\IIS GIORGI\git\Giorgi_ar_test\testMybatis\src\main\java\com\model\serio\DBConnect.java
 C:\Users\IIS GIORGI\git\Giorgi_ar_test\testMybatis\src\main\java\com\mappers\CorsoMapper.java
 C:\Users\IIS GIORGI\git\Giorgi_ar_test\testMybatis\src\main\java\com\service\StudentServiceImpl.java
 C:\Users\IIS GIORGI\git\Giorgi_ar_test\testMybatis\src\main\java\com\mappers\AnagrafeDisciplinaMapper.java
+C:\Users\IIS GIORGI\git\Giorgi_ar_test\testMybatis\src\main\java\com\model\mail\EmailUtils.java
 C:\Users\IIS GIORGI\git\Giorgi_ar_test\testMybatis\src\main\java\com\model\StudentLogin.java
 C:\Users\IIS GIORGI\git\Giorgi_ar_test\testMybatis\src\main\java\com\controller\StudentController.java
 C:\Users\IIS GIORGI\git\Giorgi_ar_test\testMybatis\src\main\java\com\mappers\GenericMapper.java
@@ -25,6 +28,8 @@ C:\Users\IIS GIORGI\git\Giorgi_ar_test\testMybatis\src\main\java\com\model\Anagr
 C:\Users\IIS GIORGI\git\Giorgi_ar_test\testMybatis\src\main\java\com\service\PersonServiceImpl.java
 C:\Users\IIS GIORGI\git\Giorgi_ar_test\testMybatis\src\main\java\com\service\AnagrafeService.java
 C:\Users\IIS GIORGI\git\Giorgi_ar_test\testMybatis\src\main\java\com\mappers\PersonMapper.java
+C:\Users\IIS GIORGI\git\Giorgi_ar_test\testMybatis\src\main\java\com\model\mail\Email.java
 C:\Users\IIS GIORGI\git\Giorgi_ar_test\testMybatis\src\main\java\com\model\Person.java
+C:\Users\IIS GIORGI\git\Giorgi_ar_test\testMybatis\src\main\java\com\model\mail\EmailTemplate.java
 C:\Users\IIS GIORGI\git\Giorgi_ar_test\testMybatis\src\main\java\com\model\Corso.java
 C:\Users\IIS GIORGI\git\Giorgi_ar_test\testMybatis\src\main\java\com\service\StudentService.java

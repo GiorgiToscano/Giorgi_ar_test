@@ -22,6 +22,12 @@
 			<br />
 			<form:form class="form-vertical" method="post"
 				modelAttribute="userForm" action="${varUrl}">
+				<c:if test="${errors == true}">
+					<div class="alert alert-danger">
+						<h3>Errori:</h3>
+						<form:errors path="*" />
+					</div>
+				</c:if>
 				<div class="form-group">
 					<form:label for="name" path="nome">Nome</form:label>
 					<div>
@@ -37,6 +43,7 @@
 						<form:input id="surname" class="form-control" path="cognome"
 							placeholder="Inserisci il tuo cognome" type="text"
 							style=" margin: 0 auto;  text-align:left; width:100%;" />
+						<form:errors path="nome" />
 					</div>
 				</div>
 
@@ -61,16 +68,16 @@
 				<div class="form-group">
 					<form:label for="username" path="username">Username</form:label>
 					<div>
-						<form:input id="username" class="form-control" path="username" type="text"
-							placeholder="Username"
+						<form:input id="username" class="form-control" path="username"
+							type="text" placeholder="Username"
 							style=" margin: 0 auto;  text-align:left; width:100%;" />
 					</div>
 				</div>
 				<div class="form-group">
 					<form:label for="pwd" path="password">Password</form:label>
 					<div>
-						<form:input id="pwd" class="form-control" path="password" type="text"
-							placeholder="Password"
+						<form:input id="pwd" class="form-control" path="password"
+							type="password" placeholder="Password"
 							style=" margin: 0 auto;  text-align:left; width:100%;" />
 					</div>
 				</div>
@@ -78,8 +85,8 @@
 				<div class="form-group">
 					<form:label for="rippwd" path="ripetiPassword">Ripeti Password</form:label>
 					<div>
-						<form:input id="rippwd" class="form-control" path="ripetiPassword" type="text"
-							placeholder="Ripeti password"
+						<form:input id="rippwd" class="form-control" path="ripetiPassword"
+							type="password" placeholder="Ripeti password"
 							style=" margin: 0 auto;  text-align:left; width:100%;" />
 					</div>
 				</div>
@@ -87,8 +94,9 @@
 				<div class="form-group">
 					<form:label for="tip" path="tipologia">Tipologia</form:label>
 					<div>
-						<form:input id="tip" class="form-control" path="tipologia" type="text"
-							style=" margin: 0 auto;  text-align:left; width:100%;" />
+						<form:select path="tipologie">
+							<form:options path="${tipologie}" />
+						</form:select>
 					</div>
 				</div>
 
