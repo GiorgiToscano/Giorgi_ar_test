@@ -13,7 +13,7 @@
 	rel="stylesheet" type="text/css">
 </head>
 <body>
-	<c:url var="varUrl" value="/utente/new.html" />
+	<c:url var="varUrl" value="/utente/" />
 
 	<div class="container theme-showcase" role="main"
 		style="border: 0px dotted;">
@@ -21,7 +21,7 @@
 			<h3 class="form-signin-heading">AREA RISERVATA - REGISTRAZIONE</h3>
 			<br />
 			<form:form class="form-vertical" method="post"
-				modelAttribute="userForm" action="${varUrl}">
+				modelAttribute="userForm" action="new.html">
 				<c:if test="${errors == true}">
 					<div class="alert alert-danger">
 						<h3>Errori:</h3>
@@ -91,14 +91,12 @@
 					</div>
 				</div>
 
-				<div class="form-group">
+<%-- 				<div class="form-group">
 					<form:label for="tip" path="tipologia">Tipologia</form:label>
 					<div>
-						<form:select path="tipologie">
-							<form:options path="${tipologie}" />
-						</form:select>
+						<form:input path="tipologia" />
 					</div>
-				</div>
+				</div> --%>
 
 				<br>
 				<input class="btn btn-lg btn-success" type="submit" value="Registra" />

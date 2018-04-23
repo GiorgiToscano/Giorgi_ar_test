@@ -35,6 +35,9 @@ public class UtenteController {
 	@Autowired
 	private UtenteValidator utenteValidator;
 	
+	@Autowired
+	private EmailManager manager;
+	
 	@RequestMapping(value = "/utente/new", method = RequestMethod.GET)
 	public String showUserForm(Model model) {
 		UtenteForm userForm = new UtenteForm();
@@ -70,19 +73,19 @@ public class UtenteController {
 		
 		//EMAIL
 		ConfirmRegistrationEmail cre = new ConfirmRegistrationEmail(u, getActivationLink(code, request));
-		EmailManager.sendEmail(cre, u.getEmail());
+		manager.sendEmail(cre, u.getEmail());
 		
 		
 		System.out.println("Showed form! from POST");
 		return "utenteform";
 	}	
 	
-	@ModelAttribute("tipologie")
-	public Map<String,String> populateTipologie(){
-		Map<String,String> tipologieMap = new LinkedHashMap<String,String>();
-		tipologieMap.put("0", "");
-		return tipologieMap;
-	}
+//	@ModelAttribute("tipologie")
+//	public Map<String,String> populateTipologie(){
+//		Map<String,String> tipologieMap = new LinkedHashMap<String,String>();
+//		tipologieMap.put("0", "");
+//		return tipologieMap;
+//	}
 	
 	private String getActivationLink(String activationCode,HttpServletRequest req) {
 		String host = "";
