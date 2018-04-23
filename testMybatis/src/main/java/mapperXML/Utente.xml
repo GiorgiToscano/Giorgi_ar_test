@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mappers.UtenteMapper">
+
+	<select id="selectEmail" parameterType="String" resultType="hashmap">
+		SELECT Email_utente FROM GG_Tab_attivazione_utente WHERE Email_utente
+		= #{email};
+	</select>
+
+	<insert id="register" useGeneratedKeys="true" keyProperty="u.id" keyColumn="Id_au" parameterType="com.model.testForm.Utente">
+		INSERT INTO GG_Tab_attivazione_utente
+		(Id_area_utente,Cognome_utente, Nome_utente, CF_utente, Userid_utente, Email_utente, Pw_utente,
+		Codice_attivazione, Flg_primo_ingresso, Data_registrazione)
+		VALUES(#{areaUtente},#{cognome},#{nome},#{codiceFiscale},#{username},#{email},#{password},#{codAtt},1,Getdate());
+	</insert>
+
+</mapper>
