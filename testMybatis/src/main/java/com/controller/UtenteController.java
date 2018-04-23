@@ -2,8 +2,6 @@ package com.controller;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.LinkedHashMap;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -73,7 +71,7 @@ public class UtenteController {
 		
 		//EMAIL
 		ConfirmRegistrationEmail cre = new ConfirmRegistrationEmail(u, getActivationLink(code, request));
-		manager.sendEmail(cre, u.getEmail());
+		cre.sentTo(manager, u.getEmail());
 		
 		
 		System.out.println("Showed form! from POST");

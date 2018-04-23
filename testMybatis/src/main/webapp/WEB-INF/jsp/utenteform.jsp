@@ -13,7 +13,6 @@
 	rel="stylesheet" type="text/css">
 </head>
 <body>
-	<c:url var="varUrl" value="/utente/" />
 
 	<div class="container theme-showcase" role="main"
 		style="border: 0px dotted;">

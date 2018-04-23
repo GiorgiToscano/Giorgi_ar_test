@@ -13,7 +13,6 @@
 	rel="stylesheet" type="text/css">
 </head>
 <body>
-	<c:url var="varUrl" value="/utente/new.html" />
 
 	<div class="container theme-showcase" role="main"
 		style="border: 0px dotted;">
@@ -21,10 +20,10 @@
 			<h3 class="form-signin-heading">AREA RISERVATA - REGISTRAZIONE</h3>
 			<br />
 			<form:form class="form-vertical" method="post"
-				modelAttribute="userForm" action="${varUrl}">
+				modelAttribute="userForm" action="new.html">
 				<c:if test="${errors == true}">
 					<div class="alert alert-danger">
-					    <h3>Errori: </h3>
+						<h3>Errori:</h3>
 						<form:errors path="*" />
 					</div>
 				</c:if>
@@ -77,7 +76,7 @@
 					<form:label for="pwd" path="password">Password</form:label>
 					<div>
 						<form:input id="pwd" class="form-control" path="password"
-							type="text" placeholder="Password"
+							type="password" placeholder="Password"
 							style=" margin: 0 auto;  text-align:left; width:100%;" />
 					</div>
 				</div>
@@ -86,19 +85,17 @@
 					<form:label for="rippwd" path="ripetiPassword">Ripeti Password</form:label>
 					<div>
 						<form:input id="rippwd" class="form-control" path="ripetiPassword"
-							type="text" placeholder="Ripeti password"
+							type="password" placeholder="Ripeti password"
 							style=" margin: 0 auto;  text-align:left; width:100%;" />
 					</div>
 				</div>
 
-				<div class="form-group">
+<%-- 				<div class="form-group">
 					<form:label for="tip" path="tipologia">Tipologia</form:label>
 					<div>
-						<form:input id="tip" class="form-control" path="tipologia"
-							type="text"
-							style=" margin: 0 auto;  text-align:left; width:100%;" />
+						<form:input path="tipologia" />
 					</div>
-				</div>
+				</div> --%>
 
 				<br>
 				<input class="btn btn-lg btn-success" type="submit" value="Registra" />
